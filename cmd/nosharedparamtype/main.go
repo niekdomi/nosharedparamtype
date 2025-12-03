@@ -1,3 +1,4 @@
+// Package main provides the command-line interface for the nosharedparamtype linter.
 package main
 
 import (

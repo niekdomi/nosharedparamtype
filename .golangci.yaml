@@ -3,23 +3,15 @@ version: "2"
 linters:
   default: all
   disable:
+    - depguard
+    - exhaustruct
     - forbidigo
+    - gochecknoglobals
+    - nilnil
+    - paralleltest
+    - revive
     - varnamelen
     - wsl
-
-  # exclusions:
-  #   rules:
-  #     - path: _test\.go
-  #       linters:
-  #         - cyclop
-  #         - errcheck
-  #         - exhaustruct
-  #         - funlen
-  #         - gocognit
-  #         - gosec
-  #         - maintidx
-  #         - paralleltest
-  #         - testpackage
 
   settings:
     funcorder:

@@ -1,7 +1,7 @@
+// Package analyzer implements the linting logic of the no shared parameter type linter.
 package analyzer
 
 import (
-	"fmt"
 	"go/ast"
 
 	"golang.org/x/tools/go/analysis"
@@ -21,11 +21,13 @@ func run(pass *analysis.Pass) (any, error) {
 		}
 
 		for _, field := range funcDecl.Type.Params.List {
-			for _, name := range field.Names {
-				fmt.Print("Param-Name: ", name.Name)
+			if len(field.Names) > 1 {
+				pass.Reportf(
+					node.Pos(),
+					"function %s has type sharing parameters",
+					funcDecl.Name.Name,
+				)
 			}
-
-			fmt.Print("Param-Type: ", field.Type)
 		}
 
 		return true
