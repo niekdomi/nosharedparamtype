@@ -5,12 +5,9 @@ linters:
   disable:
     - depguard
     - exhaustruct
-    - forbidigo
     - gochecknoglobals
     - nilnil
     - paralleltest
-    - revive
-    - varnamelen
     - wsl
 
   settings:

@@ -10,6 +10,7 @@ import (
 	"golang.org/x/tools/go/analysis"
 )
 
+// Analyzer reports shared parameter type declarations.
 var Analyzer = &analysis.Analyzer{
 	Name: "nosharedparamtype",
 	Doc:  "enforces explicit type declarations for all function parameters",
