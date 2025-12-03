@@ -1,0 +1,31 @@
+version: "2"
+
+linters:
+  default: all
+  disable:
+    - forbidigo
+    - varnamelen
+    - wsl
+
+  # exclusions:
+  #   rules:
+  #     - path: _test\.go
+  #       linters:
+  #         - cyclop
+  #         - errcheck
+  #         - exhaustruct
+  #         - funlen
+  #         - gocognit
+  #         - gosec
+  #         - maintidx
+  #         - paralleltest
+  #         - testpackage
+
+  settings:
+    funcorder:
+      alphabetical: true
+
+formatters:
+  enable:
+    - gofmt
+    - golines
