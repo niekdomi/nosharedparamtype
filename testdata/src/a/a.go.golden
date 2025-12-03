@@ -1,0 +1,44 @@
+// Package a contains test cases.
+package a
+
+type MyType struct{}
+
+func funcWithSharedParamTypes(x int, y int) int { // want "function funcWithSharedParamTypes has parameters using shared type"
+	return x + y
+}
+
+func funcWithThreeSharedParams(a string, b string, c string) string { // want "function funcWithThreeSharedParams has parameters using shared type"
+	return a + b + c
+}
+
+func funcWithMixedParams(a string, b int, c int) string { // want "function funcWithMixedParams has parameters using shared type"
+	return a
+}
+
+func funcWithSharedPointers(x *int, y *int) int { // want "function funcWithSharedPointers has parameters using shared type"
+	return *x + *y
+}
+
+func funcWithSharedSlices(x []string, y []string) int { // want "function funcWithSharedSlices has parameters using shared type"
+	return len(x) + len(y)
+}
+
+func (m MyType) methodWithSharedParams(x int, y int) int { // want "function methodWithSharedParams has parameters using shared type"
+	return x + y
+}
+
+func funcWithoutSharedParamTypes(x int, y int) int {
+	return x + y
+}
+
+func funcWithSingleParam(x int) int {
+	return x
+}
+
+func funcWithNoParams() int {
+	return 42
+}
+
+func (m MyType) methodWithSeparateParams(x int, y int) int {
+	return x + y
+}
