@@ -19,5 +19,5 @@ linters:
 
 formatters:
   enable:
-    - gofmt
-    - golines
+    - gofumpt
+    - goimports
