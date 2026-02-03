@@ -1,5 +1,11 @@
 # nosharedparamtype
 
+> [!NOTE]
+> This linter is no longer required since the same functionality, beside the
+> auto-fix option can be configured with
+> [revive](https://github.com/mgechev/revive/blob/HEAD/RULES_DESCRIPTIONS.md#enforce-repeated-arg-type-style)
+> witch is already included in golang-ci lint
+
 A Go linter that enforces explicit type declarations for all function parameters.
 
 ## Overview
